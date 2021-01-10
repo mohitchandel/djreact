@@ -15,7 +15,9 @@ class Blog(models.Model):
     discription = RichTextField(blank = True ,null = True)
     author  = models.CharField(max_length=128)
     createdAt = models.DateTimeField()
+    # category = models.ForeignKey(Category, on_delete=models.SET_NULL, default=None, null=True)
     category = models.ManyToManyField(Category)
+
 
     def __str__(self):
         return self.title

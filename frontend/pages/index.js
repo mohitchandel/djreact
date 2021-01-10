@@ -1,11 +1,10 @@
-import Head from 'next/head'
-import '../styles/Home.module.css'
-import Nav from '../components/Nav.js'
+import React from 'react';
+import Navigation from '../components/Nav.js';
 
 export default function Home() {
   return (
     <div>
-      <Nav></Nav>
+      <Navigation></Navigation>
     </div>
   )
 }
