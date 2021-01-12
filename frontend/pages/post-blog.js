@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
-import  { Redirect } from 'react-router-dom';
 import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { useRouter } from 'next/router'
 
 export default function postBlog({author}){
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [authorid, setAuthorid] = useState('')
-    console.log(authorid)
 
     const postBlog = async (e) =>{
         e.preventDefault()
@@ -25,7 +24,7 @@ export default function postBlog({author}){
             })
 
             if (postres.status === 200) {
-                return <Redirect to='/blogs'  />
+                router.push('/blogs')
             } else {
                 alert('Sorry, something went wrong.')
             }
