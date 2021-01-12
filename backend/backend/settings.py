@@ -23,7 +23,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'blogs',
-    'ckeditor',
     'drf_yasg',
 ]
 
@@ -79,7 +78,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'django-react-app',
+        'NAME': 'djreact',
     }
 }
 

@@ -2,10 +2,21 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.generics import GenericAPIView 
 from rest_framework.response import Response
-from .models import Blog
-from .serializers import BlogSerializer
+from .models import Blog, Author
+from .serializers import BlogSerializer, AuthorSerializer
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser 
+
+class AuthorListView(GenericAPIView):
+    
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+
+    def get(self, request):
+        objects = Author.objects.all()
+        serializer = AuthorSerializer(objects, many=True)
+        return Response(serializer.data)
+
 
 class BlogListView(GenericAPIView):
     
